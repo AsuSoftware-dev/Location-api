@@ -7,6 +7,6 @@ RUN mvn clean package -DskipTests
 # Stage 2: Creează imaginea finală
 FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY --from=build /app/target/location-service-0.0.1-SNAPSHOT.jar location-service.jar
+COPY --from=build /app/target/location-api-0.0.1-SNAPSHOT.jar location-service.jar
 EXPOSE 8083
 ENTRYPOINT ["java", "-jar", "location-service.jar"]
